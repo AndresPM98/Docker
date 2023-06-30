@@ -1,4 +1,3 @@
-const { create } = require("domain");
 const characters= require("./characters.json");
 
 module.exports = {
