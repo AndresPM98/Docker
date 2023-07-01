@@ -13,7 +13,7 @@ server.use("*", (req, res)=>{
 });
 
 server.use((err, req, res, next)=>{
-    res.status(err.ststusCode).send({
+    res.status(err.ststusCode || 500).send({
         error: true,
         message: err.message,
     })
