@@ -1,5 +1,5 @@
 require ("dotenv").config();
 
 module.exports = {
-    MONGO_URL: process.env.MONGO_URL
+    MONGO_URI: process.env.MONGO_URI
 }
