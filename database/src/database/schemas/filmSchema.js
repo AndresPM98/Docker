@@ -15,16 +15,20 @@ filmSchema.statics.list = async function () {
     return await this.find()
      .populate("characters", ["_id", "name"])
      .populate("planets", ["_id", "name"])
- }
+ };
  
  filmSchema.statics.get = async function (id) {
     return await this.findById(id)
     .populate("characters", ["_id", "name"])
     .populate("planets", ["_id", "name"])
- }
+ };
  
  filmSchema.statics.insert = async function (film) {
     return await this.create(film)
- }
+ };
+
+ filmSchema.statics.delete = async function (id) {
+    return await this.deleteOne({ _id: id })
+ };
 
 module.exports = filmSchema;

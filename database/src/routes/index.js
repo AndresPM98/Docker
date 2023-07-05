@@ -6,9 +6,11 @@ const router = Router();
 
 router.get("/:model", middleware.validateModel, controllers.getModel)
 
-router.get("/:model/:id", middleware.validateModel, controllers.getModelById)
+router.get("/:model/:id", middleware.validateIdModel, controllers.getModelById)
 
 router.post("/:model", middleware.validateModel, controllers.createModel)
+
+router.delete("/:model/:id", middleware.validateIdModel, controllers.deleteModel)
 
 module.exports = router;
 
