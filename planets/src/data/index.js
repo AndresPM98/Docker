@@ -5,7 +5,16 @@ module.exports = {
         const response = await axios.get("http://database:8004/Planet");
         return response.data
     },
-    create: () => {
-        throw Error("Hubo un error en la BDD al crear el planeta")
-    }
+    getById: async (id) => {
+        const response = await axios.get(`http://database:8004/Planet/${id}`);
+        return response.data;
+    },
+    create: async (data) => {
+        const response = await axios.post("http://database:8004/Planet", data);
+        return response.data;
+    },
+    delete: async (id) => {
+        const response = await axios.delete(`http://database:8004/Planet/${id}`);
+        return response.data;
+    },
 };
